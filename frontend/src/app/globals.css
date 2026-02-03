@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Colorful pixel art palette */
+  --cream: #FFF8E7;
+  --peach: #FFD4B2;
+  --warm-brown: #8B5A2B;
+  --warm-gray: #A0826D;
+  --coral: #FF6B6B;
+  --mint: #4ECDC4;
+  --purple: #9B59B6;
+  --blue: #3498DB;
+  --yellow: #F1C40F;
+  --orange: #E67E22;
+  --pink: #E91E63;
+  --green: #2ECC71;
+  --dark: #2C1810;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+}
+
+/* Pixel art rendering */
+.pixel-render {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Pixel font style */
+.pixel-text {
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-brown);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--coral);
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-coral text-white px-4 py-2 rounded-lg font-medium transition-all hover:bg-opacity-90 active:scale-95 shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-purple text-white px-4 py-2 rounded-lg font-medium transition-all hover:bg-opacity-90 active:scale-95 shadow-md;
+}
+
+.btn-mint {
+  @apply bg-mint text-white px-4 py-2 rounded-lg font-medium transition-all hover:bg-opacity-90 active:scale-95 shadow-md;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg border-2 border-amber-900/20 p-4;
+}
+
+/* Input styles */
+.input {
+  @apply w-full px-3 py-2 border-2 border-amber-900/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-coral focus:border-transparent bg-white;
+}
+
+.label {
+  @apply block text-sm font-medium text-amber-800 mb-1 uppercase tracking-wide;
+}
+
+/* Pixel border effect */
+.pixel-border {
+  border: 4px solid var(--warm-brown);
+  box-shadow: 4px 4px 0 var(--warm-brown);
+}
+
+/* Retro panel style */
+.retro-panel {
+  background: linear-gradient(180deg, #FFF8E7 0%, #FFE4C4 100%);
+  border: 3px solid var(--warm-brown);
+  border-radius: 8px;
+  box-shadow: 0 4px 0 var(--warm-brown);
+}
+
+/* Character slot */
+.character-slot {
+  @apply relative bg-cream border-4 rounded-lg p-2 cursor-pointer transition-all;
+  border-color: rgba(139, 90, 43, 0.4);
+}
+
+.character-slot:hover {
+  border-color: var(--coral);
+  transform: translateY(-2px);
+}
+
+.character-slot.selected {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+.character-slot.empty {
+  border-style: dashed;
+  border-color: rgba(139, 90, 43, 0.3);
+}
+
+/* Tool tag */
+.tool-tag {
+  @apply inline-flex items-center px-2 py-1 rounded text-xs font-medium transition-all cursor-pointer;
+}
+
+.tool-tag.selected {
+  @apply bg-mint text-white;
+}
+
+.tool-tag.unselected {
+  @apply bg-amber-100 text-amber-800 hover:bg-amber-200;
+}
